@@ -1,0 +1,20 @@
+Total Employees = COUNTROWS('FactEmployee')
+
+Attrition Count = CALCULATE([Total Employees], 'FactEmployee'[AttritionFlag] = 1)
+
+Attrition Rate % = DIVIDE([Attrition Count], [Total Employees], 0)
+
+Avg Monthly Income = AVERAGE('FactEmployee'[MonthlyIncome])
+
+Avg Income Attrited = CALCULATE([Avg Monthly Income], 'FactEmployee'[AttritionFlag] = 1)
+
+Avg Income Retained = CALCULATE([Avg Monthly Income], 'FactEmployee'[AttritionFlag] = 0)
+
+Income Gap = [Avg Income Retained] - [Avg Income Attrited]
+
+Overtime Attrition Rate % =
+DIVIDE(
+    CALCULATE([Attrition Count], 'FactEmployee'[OverTimeFlag] = 1),
+    CALCULATE([Total Employees], 'FactEmployee'[OverTimeFlag] = 1),
+    0
+)
