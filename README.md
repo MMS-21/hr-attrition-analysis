@@ -33,6 +33,17 @@ Where should HR investigate retention concerns first? An overall average hides d
 
 These are descriptive comparisons within the supplied sample. They do not establish causes, future individual risk, annual turnover, or savings delivered. Experience means total working years, not tenure at this employer. Recommended interventions would need follow-up evaluation.
 
+## Power BI report pages
+
+![Power BI Executive Overview](reports/powerbi/executive-overview.png)
+
+- [Landing Page](reports/powerbi/landing-page.png)
+- [Executive Overview](reports/powerbi/executive-overview.png)
+- [Deep Dive](reports/powerbi/deep-dive.png)
+- [Recommendations Preview](reports/powerbi/recommendations.png)
+
+Original report screenshots. The decomposition tree is descriptive, not evidence of root causes. The Deep Dive income-band chart shows counts despite its percentage heading. The recommendations page shows a hypothetical savings scenario under displayed assumptions, not an observed result or validated forecast.
+
 ## Python and SQL together
 
 Python loads prepared Excel tables into pandas. DuckDB registers those DataFrames as queryable relations in an in-memory SQL connection. SQL joins department and role dimensions to employee records, and `fetchdf()` brings the results back into pandas. This workflow does not update a persistent production database.
